@@ -1,0 +1,67 @@
+@font-face
+{
+    src:url(../fonts/digital-7.ttf);
+    font-family: digital;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: digital,Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+ 
+}
+
+.calculator {
+  background-color: crimson;
+  padding: 20px;
+  width: 450px;
+
+}
+
+
+#calc-display {
+  font-size: 38px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  padding: 6px 10px; 
+  background: white;
+  text-align: right;
+
+}
+
+#calc-display:focus {
+  outline: none;
+}
+
+.btns {
+  /* background: yellow; */
+  display: flex;
+  justify-content: space-around;
+  padding: 3px;
+}
+
+.btns button {
+  flex: 1 25%;
+  padding: 10px;
+}
+
+button {
+  margin: 2px 4px;
+  font-size: 26px;
+
+}
