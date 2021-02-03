@@ -1,9 +1,9 @@
 let val = document.getElementById('calc-display');
+// val.value = "0";
 
 function calculator(num)
-{
-    val.value += num;
-
+{   
+    val.value += num
 }
 
 function insertDecimal()
@@ -16,20 +16,41 @@ function insertDecimal()
 
 function operator(opr)
 {
-    let digits = val.value;
-    digits = digits.split("");
-    let lastDigit = digits[digits.length -1];
-    digits = digits.join("");
+    let isOperator = false;
+    //last digit of display
+    let lastDigit = val.value.slice(val.value.length -1);
+
     var ops = ["-", "+", "*", "/"];
-    if(ops.indexOf(opr) !== -1)
+    //if last digit is an operator then isOperator should be true
+    if(ops.indexOf(lastDigit) === -1)
+    {
+        isOperator = true;
+    
+    }
+
+    if(isOperator)
     {
         val.value += opr;
     }
 
-    else
+    else if(lastDigit === "+" && opr === "-")
     {
-        lastDigit = opr;
+        val.value += opr;
     }
+
+    else if(!isOperator)
+    {
+        let newStr = val.value.slice(0,-1);
+        val.value = newStr;
+        val.value += opr;
+    }
+
+        
+    // val.value += opr;
+
+
+
+
 
 
 }
@@ -58,3 +79,5 @@ function clearAll()
 {
     val.value = "";
 }
+
+

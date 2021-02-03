@@ -15,36 +15,36 @@
                 <input type="text" name="display" id="calc-display" disabled/>
             </div>
             <div class="btns">
-                <button onclick="deleteBtn()">CE</button>
-                <button onclick="clearAll()">C</button>
-                <button onclick="operator('%')">%</button>
-                <button onclick="operator('*')">&times;</button>
+                <button class="btn-del" onclick="deleteBtn()">CE</button>
+                <button class="btn-del" onclick="clearAll()">C</button>
+                <button class="btn-operator" onclick="operator('%')">%</button>
+                <button class="btn-operator" onclick="operator('*')">&times;</button>
             </div>
             <div class="btns">
                 <button onclick="calculator('7')">7</button>
                 <button onclick="calculator('8')">8</button>
                 <button onclick="calculator('9')">9</button>
-                <button onclick="operator('/')">&divide;</button>
+                <button class="btn-operator" onclick="operator('/')">&divide;</button>
             </div>
             <div class="btns">
                 <button onclick="calculator('4')">4</button>
                 <button onclick="calculator('5')">5</button>
                 <button onclick="calculator('6')">6</button>
-                <button onclick="operator('-')">-</button>
+                <button class="btn-operator" onclick="operator('-')">-</button>
             </div>
             <div class="btns">
                 <button onclick="calculator('1')">1</button>
                 <button onclick="calculator('2')">2</button>
                 <button onclick="calculator('3')">3</button>
-                <button onclick="operator('+')">+</button>
+                <button class="btn-operator" onclick="operator('+')">+</button>
             </div>
             <div class="btns">
                 <button onclick="calculator('00')">00</button>
                 <button onclick="calculator('0')">0</button>
                 <button onclick="insertDecimal()">.</button>
-                <button onclick="getTotal()">=</button>
+                <button class="btn-operator" onclick="getTotal()">=</button>
             </div>
-            <div class="length" id="num-length"></div>
+            <div class="footer">Designed by <a href="https://www.instagram.com/anisbaloch">Anis Baloch</a></div>
         </div>
     </div>
 </body>

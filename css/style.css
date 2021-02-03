@@ -1,35 +1,60 @@
-@font-face
-{
-    src:url(../fonts/digital-7.ttf);
-    font-family: digital;
+:root {
+  --bg-color: linear-gradient(to right top, #65dfc9, #6cdbeb);
+  --calc-bg: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  --btn-bg: #5fdbc5;
+  --btn-color: black;
+  --footer-color: rgba(236, 236, 236, 0.5);
+}
+
+@media only screen and (min-width: 300px) {
+  body {
+    padding: 30px;
+  }
+}
+
+@font-face {
+  src: url(../fonts/digital-7.ttf);
+  font-family: digital;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: digital,Arial, Helvetica, sans-serif;
+  font-family: digital, Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.4;
 }
 
-
+body {
+  background: var(--bg-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
- 
 }
 
 .calculator {
-  background-color: crimson;
+  background: var(--calc-bg);
+  border-radius: 1rem;
   padding: 20px;
   width: 450px;
-
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+.display {
+  padding: 6px;
+}
 
 #calc-display {
   font-size: 38px;
@@ -38,10 +63,10 @@
   border-radius: 6px;
   outline: none;
   border: none;
-  padding: 6px 10px; 
-  background: white;
+  padding: 6px 16px;
+  background: var(--bg-color);
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
   text-align: right;
-
 }
 
 #calc-display:focus {
@@ -49,7 +74,6 @@
 }
 
 .btns {
-  /* background: yellow; */
   display: flex;
   justify-content: space-around;
   padding: 3px;
@@ -58,10 +82,51 @@
 .btns button {
   flex: 1 25%;
   padding: 10px;
-}
-
-button {
+  color: var(--btn-color);
+  background: var(--btn-bg);
+  /* opacity: 0.4; */
+  border: none;
+  border-radius: 4px;
+  box-shadow: 3px 3px 6px rgba(122, 122, 122, 0.6);
   margin: 2px 4px;
   font-size: 26px;
+  /* font-weight: bold; */
+}
 
+.btns button.btn-operator {
+  background: rgba(1, 128, 7, 0.7);
+}
+
+.btns button.btn-del {
+  background: rgba(226, 35, 21, 0.7);
+}
+
+.btns button:active {
+  background-color: var(--display-bg);
+  box-shadow: none;
+}
+
+.btns button:focus {
+  outline: none;
+}
+
+.footer {
+  font-family: Arial, Helvetica, sans-serif;
+  width: max-content;
+  background: var(--bg-color);
+  padding: 2px 5px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px 20px 0px auto;
+  text-align: right;
+  font-size: 14px;
+  display: none;
+}
+
+.footer a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin: none;
+  color: black;
+  margin-left: 10px;
 }
